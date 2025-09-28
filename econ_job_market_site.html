@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhD Job Market Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            color: #2b2b2b;
+        }
+        header {
+            background-color: #1a2238;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            margin: 2rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .sidebar {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            min-width: 200px;
+            background: #e6e8f1;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .sidebar img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #1a2238;
+            font-weight: bold;
+            margin: 0.25rem 0;
+        }
+        .sidebar a:hover {
+            color: #bfa14a;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            min-width: 300px;
+        }
+        h2 {
+            color: #1a2238;
+            margin-bottom: 0.25rem;
+        }
+        .evaluations-link a {
+            color: #0000EE;
+            text-decoration: underline;
+            font-weight: normal;
+        }
+        .evaluations-link a:hover {
+            color: #551A8B;
+        }
+        .toggle-content {
+            display: none;
+            margin-top: 0.5rem;
+            padding-left: 1.2rem;
+        }
+        .toggle-button::before {
+            content: '\25B6';
+            display: inline-block;
+            margin-right: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        .toggle-button.open::before {
+            transform: rotate(90deg);
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                margin: 1rem;
+            }
+            .sidebar, .content {
+                width: 100%;
+            }
+            .sidebar img {
+                max-width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Your Name
+    </header>
+
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <img src="your-photo.jpg" alt="Your Photo">
+            <a href="your-cv.pdf" target="_blank">CV</a>
+            <a href="your-website" target="_blank">Website</a>
+            <a href="your-linkedin" target="_blank">LinkedIn</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Me -->
+            <div>
+                <p>Brief description of yourself goes here.</p>
+                <p>Contact: <a href="mailto:your@email.com">your@email.com</a></p>
+            </div>
+
+            <!-- Job Market Paper -->
+            <div>
+                <h2>Job Market Paper</h2>
+                <p><strong>Title of Paper</strong> (<a href="jmp.pdf" target="_blank">link</a>)</p>
+                <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
+                <div class="toggle-content">
+                    <p>Your abstract goes here. This will expand and collapse when clicked.</p>
+                </div>
+            </div>
+
+            <!-- Works in Progress -->
+            <div>
+                <h2>Works in Progress</h2>
+                <p><strong>Title 1</strong> (<a href="paper1.pdf" target="_blank">link</a>)</p>
+                <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
+                <div class="toggle-content"><p>Abstract for paper 1.</p></div>
+
+                <p><strong>Title 2</strong> (<a href="paper2.pdf" target="_blank">link</a>)</p>
+                <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
+                <div class="toggle-content"><p>Abstract for paper 2.</p></div>
+            </div>
+
+            <!-- Teaching -->
+            <div>
+                <h2>Teaching</h2>
+                <div class="evaluations-link">
+                    <a href="evaluations.pdf" target="_blank">Evaluations</a>
+                </div>
+
+                <p class="toggle-button" onclick="toggleContent(this)">MBA</p>
+                <div class="toggle-content">
+                    <ul>
+                        <li>MBA Course 1</li>
+                        <li>MBA Course 2</li>
+                    </ul>
+                </div>
+
+                <p class="toggle-button" onclick="toggleContent(this)">Undergraduate</p>
+                <div class="toggle-content">
+                    <ul>
+                        <li>Undergraduate Course 1</li>
+                        <li>Undergraduate Course 2</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent(element) {
+            element.classList.toggle("open");
+            let content = element.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
