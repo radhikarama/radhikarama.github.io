@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PhD Job Market Website</title>
+    <title>Radhika Ramakrishnan - PhD Job Market</title>
     <style>
+        /* Modern, clean typography */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
             display: flex;
             flex-direction: column;
-            background-color: white;
+            background-color: #ffffff;
             color: #2b2b2b;
         }
         header {
             background-color: #1a2238;
             color: white;
-            padding: 1rem 2rem;
-            font-size: 1.5rem;
-            font-weight: bold;
+            padding: 1.5rem 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         .container {
             display: flex;
@@ -27,28 +29,31 @@
             flex-wrap: wrap;
         }
         .sidebar {
-            width: 20%;
+            width: 220px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 1rem;
             min-width: 200px;
-            background: #e6e8f1;
+            background: #f4f5f7;
             padding: 1rem;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
         .sidebar img {
             width: 100%;
-            border-radius: 8px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .sidebar a {
             text-decoration: none;
             color: #1a2238;
-            font-weight: bold;
-            margin: 0.25rem 0;
+            font-weight: 500;
+            margin: 0.5rem 0;
+            transition: color 0.2s ease;
         }
         .sidebar a:hover {
-            color: #bfa14a;
+            color: #0059b3;
         }
         .content {
             flex: 1;
@@ -60,6 +65,9 @@
         h2 {
             color: #1a2238;
             margin-bottom: 0.25rem;
+            border-bottom: 1px solid #d3d3d3;
+            padding-bottom: 0.25rem;
+            font-weight: 600;
         }
         .evaluations-link a {
             color: #0000EE;
@@ -73,6 +81,7 @@
             display: none;
             margin-top: 0.5rem;
             padding-left: 1.2rem;
+            line-height: 1.6;
         }
         .toggle-button::before {
             content: '\25B6';
@@ -82,6 +91,9 @@
         }
         .toggle-button.open::before {
             transform: rotate(90deg);
+        }
+        p, li {
+            font-size: 1rem;
         }
         @media (max-width: 768px) {
             .container {
@@ -96,6 +108,7 @@
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -103,7 +116,6 @@
     </header>
 
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <img src="Photo.jpg" alt="Your Photo">
             <a href="coming_soon_copy_4.pdf" target="_blank">CV</a>
@@ -111,69 +123,69 @@
             <a href="https://www.linkedin.com/in/radhika-ramakrishnan-8583a2123/" target="_blank">LinkedIn</a>
         </div>
 
-        <!-- Main Content -->
         <div class="content">
-            <!-- About Me -->
             <div>
-                <p>Welcome!  I am a PhD Candidate in Economics at Northwestern University.  My primary research fields are health and applied microeconomics, with a secondary field in industrial organization.  I have extensive experience employing causal inference methods in large observational datasets. </p>
-                <p>I am on the job market during the 2025-2026 academic year. Check</p>
+                <p>Welcome! I am a PhD Candidate in Economics at Northwestern University. My primary research fields are health and applied microeconomics, with a secondary field in industrial organization. I have extensive experience employing causal inference methods in large observational datasets.</p>
+                <p>I am on the job market during the 2025-2026 academic year.</p>
                 <p>Contact: <a href="mailto:rram@u.northwestern.edu">rram@u.northwestern.edu</a></p>
             </div>
 
-            <!-- Job Market Paper -->
             <div>
                 <h2>Job Market Paper</h2>
                 <p><strong>Hospital Ownership and Quality of Care</strong> (<a href="coming_soon.pdf" target="_blank">link</a>)</p>
                 <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
                 <div class="toggle-content">
-                    <p>Your abstract goes here. This will expand and collapse when clicked.</p>
+                    <p>Your abstract goes here.</p>
                 </div>
             </div>
 
-            <!-- Works in Progress -->
             <div>
                 <h2>Works in Progress</h2>
                 <p><strong>Vertical Integration and Provider Choice, with Xingyue Xin</strong> (<a href="coming_soon_copy.pdf" target="_blank">link</a>)</p>
                 <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
                 <div class="toggle-content"><p>Abstract for paper 1.</p></div>
 
+                <p><strong>Private Equity in the US Hospital Market</strong> (<a href="coming_soon_copy.pdf" target="_blank">link</a>)</p>
+                <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
+                <div class="toggle-content"><p>Abstract for paper 1.</p></div>
+
+
+            </div>
+
+            <div>
+                <h2>Working Papers</h2>
                 <p><strong>School Finance Reforms and Birth Outcomes, with Sam Ayers</strong> (<a href="coming_soon_copy_2.pdf" target="_blank">link</a>)</p>
                 <p class="toggle-button" onclick="toggleContent(this)">Abstract</p>
                 <div class="toggle-content"><p>Abstract for paper 2.</p></div>
             </div>
 
-            <!-- Teaching -->
             <div>
                 <h2>Teaching</h2>
-                <div class="evaluations-link">
-                    <a href="coming_soon_copy_3.pdf" target="_blank">Evaluations</a>
+                <p class="toggle-button" onclick="toggleContent(this)">Undergraduate (<a href="coming_soon_copy_3.pdf" target="_blank">Evaluations</a>)</p>
+                <div class="toggle-content">
+                    <p>I was a teaching assistant for the following undergraduate courses:</p>
+                    <ul>
+                        <li>Introduction to Macroeconomics</li>
+                        <li>Introduction to Microeconomics</li>
+                        <li>Industrial Organization</li>
+                        <li>International Trade</li>
+                    </ul>
+                    <p>I received the Northwestern Economics Department Distinguished Teaching Assistant Award in 2023 and 2024.</p>
                 </div>
 
                 <p class="toggle-button" onclick="toggleContent(this)">MBA</p>
                 <div class="toggle-content">
                     <ul>
-                        <li>Marketing Strategy - Teaching Assistant: Full-time MBA, Executive MBA, and Corporate Education Programs (Spring 2024, Fall 2023, Spring 2023, Winter 2023, Fall 2022, Spring 2022)</li>
-                        <li>Healthcare Strategy - Grader: Full-time MBA (Winter 2023)</li>
+                        <li>Marketing Strategy - TA: Full-time MBA, Executive MBA, Corporate Education Programs</li>
+                        <li>Healthcare Strategy - Grader: Full-time MBA</li>
                     </ul>
-                </div>
-
-                <p class="toggle-button" onclick="toggleContent(this)">Undergraduate</p>
-                <div class="toggle-content">
-                    <p>I was a teaching assistant for the following courses:</p>
-                    <ul>
-                        <li>Introduction to Macroeconomics (Winter 2025, Winter 2024, Fall 2023, Fall 2021) </li>
-                        <li>Introduction to Microeconomics (Fall 2024) </li>
-                        <li>Industrial Organization (Spring 2024)</li>
-                        <li>International Trade (Spring 2022, Winter 2022)</li>
-                    </ul>
-                    <p>I received the Northwestern Economics Department Distinguished Teaching Assistant Award in 2023 and 2024 for my excellence in instruction for undergraduate coursework.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <script>
-        window.addEventListener('load', () => {
+         window.addEventListener('load', () => {
             document.cookie.split(';').forEach(cookie => {
                 const eqPos = cookie.indexOf('=');
                 const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
@@ -182,13 +194,9 @@
         });
 
         function toggleContent(element) {
-            element.classList.toggle("open");
-            let content = element.nextElementSibling;
-            if (content.style.display === "block") {
-                content.style.display = "none";
-            } else {
-                content.style.display = "block";
-            }
+            element.classList.toggle('open');
+            const content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
